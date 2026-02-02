@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>G6K | Innovación Electrónica</title>
+
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: #131a2a;
+      --accent: #00f0ff;
+      --text: #e6e9f0;
+      --muted: #9aa4bf;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #10162b, var(--bg));
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    .logo {
+      max-width: 320px;
+      width: 85%;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 25px rgba(0, 240, 255, 0.4));
+    }
+
+    header p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    main {
+      padding: 3rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .departments {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: linear-gradient(160deg, var(--card), #0f1424);
+      border: 1px solid rgba(0, 240, 255, 0.15);
+      border-radius: 18px;
+      padding: 2.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(0,240,255,0.08),
+        transparent
+      );
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card h2 {
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+      line-height: 1.55;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 0.75rem 1.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #000;
+      background: var(--accent);
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .card a:hover {
+      background: #00c6d4;
+      transform: scale(1.06);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="logo-g6k.png" alt="G6K Innovación Electrónica" class="logo" />
+    <p>
+      Grupo empresarial especializado en innovación electrónica,
+      desarrollo tecnológico y soluciones avanzadas para el futuro.
+    </p>
+  </header>
+
+  <main>
+    <section class="departments">
+
+      <div class="card">
+        <h2>Departamento 01</h2>
+        <p>
+          Investigación y desarrollo de tecnología electrónica,
+          prototipado avanzado y soluciones innovadoras.
+        </p>
+        <a href="#">Acceder</a>
+      </div>
+
+      <div class="card">
+        <h2>Departamento 02</h2>
+        <p>
+          Diseño de hardware, sistemas embebidos y optimización
+          de componentes electrónicos.
+        </p>
+        <a href="#">Acceder</a>
+      </div>
+
+      <div class="card">
+        <h2>Departamento 03</h2>
+        <p>
+          Software, automatización, integración digital
+          y control inteligente de sistemas.
+        </p>
+        <a href="#">Acceder</a>
+      </div>
+
+      <div class="card">
+        <h2>Departamento 04</h2>
+        <p>
+          Producción, distribución y soluciones comerciales
+          para tecnología de última generación.
+        </p>
+        <a href="#">Acceder</a>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    © 2026 G6K · Innovación Electrónica
+  </footer>
+
+</body>
+</html>
