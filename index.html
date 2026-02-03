@@ -10,6 +10,7 @@
       --bg: #0b0f1a;
       --card: #131a2a;
       --accent: #00f0ff;
+      --accent-soft: rgba(0,240,255,0.15);
       --text: #e6e9f0;
       --muted: #9aa4bf;
     }
@@ -36,14 +37,15 @@
       max-width: 320px;
       width: 85%;
       margin-bottom: 1.5rem;
-      filter: drop-shadow(0 0 25px rgba(0, 240, 255, 0.4));
+      filter: drop-shadow(0 0 28px rgba(0, 240, 255, 0.45));
     }
 
     header p {
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto;
       color: var(--muted);
       font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     main {
@@ -55,16 +57,17 @@
     .departments {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
+      gap: 2.2rem;
     }
 
     .card {
       background: linear-gradient(160deg, var(--card), #0f1424);
-      border: 1px solid rgba(0, 240, 255, 0.15);
-      border-radius: 18px;
-      padding: 2.2rem;
+      border: 1px solid var(--accent-soft);
+      border-radius: 20px;
+      padding: 2.4rem 2.2rem 2.6rem;
       position: relative;
       overflow: hidden;
+      text-align: center;
       transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
@@ -75,7 +78,7 @@
       background: linear-gradient(
         120deg,
         transparent,
-        rgba(0,240,255,0.08),
+        rgba(0,240,255,0.10),
         transparent
       );
       opacity: 0;
@@ -83,41 +86,52 @@
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65);
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
     }
 
     .card:hover::before {
       opacity: 1;
     }
 
+    /* LOGOS DE DEPARTAMENTO */
+    .dept-logo {
+      max-width: 120px;
+      height: auto;
+      margin-bottom: 1.2rem;
+      filter: drop-shadow(0 0 15px rgba(0,240,255,0.35));
+    }
+
     .card h2 {
       color: var(--accent);
-      margin-bottom: 0.8rem;
-      letter-spacing: 1px;
+      margin-bottom: 0.9rem;
+      letter-spacing: 1.5px;
+      font-size: 1.25rem;
+      text-transform: uppercase;
     }
 
     .card p {
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       color: var(--muted);
-      margin-bottom: 1.6rem;
-      line-height: 1.55;
+      margin-bottom: 1.8rem;
+      line-height: 1.6;
     }
 
     .card a {
       display: inline-block;
-      padding: 0.75rem 1.6rem;
+      padding: 0.75rem 1.8rem;
       border-radius: 999px;
       text-decoration: none;
       color: #000;
-      background: var(--accent);
-      font-weight: 600;
-      transition: background 0.3s ease, transform 0.2s ease;
+      background: linear-gradient(135deg, var(--accent), #00c6d4);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .card a:hover {
-      background: #00c6d4;
-      transform: scale(1.06);
+      transform: scale(1.08);
+      box-shadow: 0 0 18px rgba(0,240,255,0.6);
     }
 
     footer {
@@ -136,7 +150,7 @@
     <img src="logo-g6k.png" alt="G6K Innovación Electrónica" class="logo" />
     <p>
       Grupo empresarial especializado en innovación electrónica,
-      desarrollo tecnológico y soluciones avanzadas para el Automovilismo.
+      desarrollo tecnológico y soluciones avanzadas para el automovilismo.
     </p>
   </header>
 
@@ -144,36 +158,43 @@
     <section class="departments">
 
       <div class="card">
+        <img src="seced-logo.png" alt="SECeD" class="dept-logo" />
         <h2>SECeD</h2>
         <p>
-          Seguridad y sistemas aéreos con envio de imágenes sin delay,
-          megafonia y  visión nocturna.
+          Seguridad y sistemas aéreos con envío de imágenes sin delay,
+          megafonía y visión nocturna.
         </p>
-        <a href="#">Acceder</a>
+        <a href="seced.html">Acceder</a>
       </div>
 
       <div class="card">
+        <img src="mopar-logo.png" alt="MOPaR" class="dept-logo" />
         <h2>MOPaR</h2>
         <p>
-          Monitoreo de participantes en tiempo real.
+          Monitoreo de participantes en tiempo real con sistemas
+          de seguimiento avanzados.
         </p>
-        <a href="#">Acceder</a>
+        <a href="mopar.html">Acceder</a>
       </div>
 
       <div class="card">
-        <h2>HEIDEGGER RACE</h2>
+        <img src="heidegger-logo.png" alt="Heidegger Race" class="dept-logo" />
+        <h2>Heidegger Race</h2>
         <p>
-          Fabricación de equipos para el cronometraje.
+          Diseño y fabricación de equipos profesionales
+          para cronometraje deportivo.
         </p>
-        <a href="#">Acceder</a>
+        <a href="heidegger.html">Acceder</a>
       </div>
 
       <div class="card">
-        <h2>Arkhon IOT</h2>
+        <img src="arkhon-logo.png" alt="Arkhon IoT" class="dept-logo" />
+        <h2>Arkhon IoT</h2>
         <p>
-          Productos IOT
+          Desarrollo de productos IoT orientados
+          a automoción y control inteligente.
         </p>
-        <a href="#">Acceder</a>
+        <a href="arkhon.html">Acceder</a>
       </div>
 
     </section>
