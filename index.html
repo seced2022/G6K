@@ -45,7 +45,6 @@
       margin: 0 auto;
       color: var(--muted);
       font-size: 1.1rem;
-      line-height: 1.6;
     }
 
     main {
@@ -64,14 +63,14 @@
       background: linear-gradient(160deg, var(--card), #0f1424);
       border: 1px solid var(--accent-soft);
       border-radius: 20px;
-      padding: 2.4rem 2.2rem 2.6rem;
+      padding: 2.4rem 2.2rem;
       text-align: center;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
     }
 
     .dept-logo {
@@ -83,72 +82,60 @@
     }
 
     .card p {
-      font-size: 0.96rem;
       color: var(--muted);
       margin-bottom: 1.4rem;
-      line-height: 1.6;
+      font-size: 0.95rem;
     }
 
-    .card a {
-      display: inline-block;
+    .card button {
       padding: 0.75rem 1.8rem;
       border-radius: 999px;
-      text-decoration: none;
-      color: #000;
+      border: none;
       background: linear-gradient(135deg, var(--accent), #00c6d4);
       font-weight: 700;
       cursor: pointer;
     }
 
-    /* PANEL DESPLEGABLE */
-    .dept-panel {
+    /* PANEL GLOBAL */
+    .info-panel {
       display: none;
-      margin-top: 1.6rem;
-      padding: 1.6rem;
-      border-radius: 14px;
-      background: rgba(10, 20, 40, 0.95);
-      border: 1px solid rgba(0,240,255,0.2);
-      text-align: left;
+      margin-top: 3rem;
+      padding: 2.5rem;
+      border-radius: 20px;
+      background: rgba(10,20,40,0.96);
+      border: 1px solid rgba(0,240,255,0.25);
     }
 
-    .dept-panel h3 {
+    .info-panel h2 {
       color: var(--accent);
-      margin-bottom: 0.5rem;
-      margin-top: 1.2rem;
-      font-size: 1.05rem;
+      margin-bottom: 1rem;
     }
 
-    .dept-panel ul {
+    .info-panel h3 {
+      margin-top: 1.5rem;
+      color: var(--accent);
+    }
+
+    .info-panel ul {
       margin-left: 1.2rem;
       color: var(--muted);
     }
 
-    .dept-panel li {
-      margin-bottom: 0.4rem;
-    }
-
-    .dept-media {
+    .media {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 1rem;
-      margin-top: 0.8rem;
+      margin-top: 1rem;
     }
 
-    .dept-media img {
+    .media img {
       width: 100%;
       border-radius: 10px;
     }
 
-    .dept-panel a.pdf {
-      display: inline-block;
-      margin-top: 0.6rem;
-      color: var(--accent);
-      text-decoration: underline;
-    }
-
     footer {
       text-align: center;
-      padding: 2rem 1.5rem;
+      padding: 2rem;
       color: var(--muted);
       font-size: 0.85rem;
       border-top: 1px solid rgba(255,255,255,0.06);
@@ -159,91 +146,41 @@
 <body>
 
 <header>
-  <img src="logo-g6k.png" alt="G6K Innovación Electrónica" class="logo" />
-  <p>
-    Grupo empresarial especializado en innovación electrónica,
-    desarrollo tecnológico y soluciones avanzadas para el automovilismo.
-  </p>
+  <img src="logo-g6k.png" class="logo">
+  <p>Innovación electrónica aplicada al automovilismo</p>
 </header>
 
 <main>
+
   <section class="departments">
-
-    <!-- SECeD -->
     <div class="card">
-      <img src="seced-logo.png" class="dept-logo" alt="SECeD">
-      <p>Sistemas aéreos con envío de imágenes sin delay, megafonía y visión nocturna.</p>
-      <a onclick="togglePanel('seced')">Acceder</a>
-
-      <div class="dept-panel" id="seced">
-        <h3>Servicios</h3>
-        <ul>
-          <li>Vigilancia aérea en eventos</li>
-          <li>Transmisión en tiempo real</li>
-        </ul>
-
-        <h3>Productos</h3>
-        <ul>
-          <li>Drones FPV profesionales</li>
-          <li>Sistemas de visión nocturna</li>
-        </ul>
-
-        <h3>Galería</h3>
-        <div class="dept-media">
-          <img src="img/seced1.jpg">
-          <img src="img/seced2.jpg">
-        </div>
-
-        <h3>Documentación</h3>
-        <a href="docs/seced-catalogo.pdf" target="_blank" class="pdf">
-          Descargar catálogo PDF
-        </a>
-      </div>
+      <img src="seced-logo.png" class="dept-logo">
+      <p>Sistemas aéreos y visión avanzada</p>
+      <button onclick="openPanel('seced')">Acceder</button>
     </div>
 
-    <!-- MOPaR -->
     <div class="card">
-      <img src="mopar-logo.png" class="dept-logo" alt="MOPaR">
-      <p>Monitoreo de participantes en tiempo real.</p>
-      <a onclick="togglePanel('mopar')">Acceder</a>
-
-      <div class="dept-panel" id="mopar">
-        <h3>Servicios</h3>
-        <ul>
-          <li>Tracking GPS en competición</li>
-        </ul>
-      </div>
+      <img src="mopar-logo.png" class="dept-logo">
+      <p>Monitoreo en tiempo real</p>
+      <button onclick="openPanel('mopar')">Acceder</button>
     </div>
 
-    <!-- HEIDEGGER -->
     <div class="card">
-      <img src="heidegger-logo.png" class="dept-logo" alt="Heidegger Race">
-      <p>Fabricación de equipos para cronometraje.</p>
-      <a onclick="togglePanel('heidegger')">Acceder</a>
-
-      <div class="dept-panel" id="heidegger">
-        <h3>Productos</h3>
-        <ul>
-          <li>Cronómetros RFID</li>
-        </ul>
-      </div>
+      <img src="heidegger-logo.png" class="dept-logo">
+      <p>Cronometraje profesional</p>
+      <button onclick="openPanel('heidegger')">Acceder</button>
     </div>
 
-    <!-- ARKHON -->
     <div class="card">
-      <img src="arkhon-logo.png" class="dept-logo" alt="Arkhon IoT">
-      <p>Productos IoT orientados a automoción.</p>
-      <a onclick="togglePanel('arkhon')">Acceder</a>
-
-      <div class="dept-panel" id="arkhon">
-        <h3>Productos</h3>
-        <ul>
-          <li>Sensores inteligentes</li>
-        </ul>
-      </div>
+      <img src="arkhon-logo.png" class="dept-logo">
+      <p>Soluciones IoT</p>
+      <button onclick="openPanel('arkhon')">Acceder</button>
     </div>
-
   </section>
+
+  <!-- PANEL GLOBAL -->
+  <section class="info-panel" id="infoPanel"></section>
+
 </main>
 
 <footer>
@@ -251,9 +188,37 @@
 </footer>
 
 <script>
-  function togglePanel(id) {
-    const panel = document.getElementById(id);
-    panel.style.display = panel.style.display === "block" ? "none" : "block";
+  let current = null;
+
+  const content = {
+    seced: `
+      <h2>SECeD</h2>
+      <h3>Servicios</h3>
+      <ul><li>Vigilancia aérea</li><li>Streaming en tiempo real</li></ul>
+      <h3>Galería</h3>
+      <div class="media">
+        <img src="img/seced1.jpg">
+        <img src="img/seced2.jpg">
+      </div>
+      <h3>Documentación</h3>
+      <a href="docs/seced-catalogo.pdf" target="_blank">Descargar PDF</a>
+    `,
+    mopar: `<h2>MOPaR</h2><p>Contenido en preparación</p>`,
+    heidegger: `<h2>Heidegger Race</h2><p>Contenido en preparación</p>`,
+    arkhon: `<h2>Arkhon IoT</h2><p>Contenido en preparación</p>`
+  };
+
+  function openPanel(id) {
+    const panel = document.getElementById("infoPanel");
+    if (current === id) {
+      panel.style.display = "none";
+      current = null;
+      return;
+    }
+    panel.innerHTML = content[id];
+    panel.style.display = "block";
+    current = id;
+    panel.scrollIntoView({ behavior: "smooth" });
   }
 </script>
 
