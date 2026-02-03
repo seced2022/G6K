@@ -65,24 +65,8 @@
       border: 1px solid var(--accent-soft);
       border-radius: 20px;
       padding: 2.4rem 2.2rem 2.6rem;
-      position: relative;
-      overflow: hidden;
       text-align: center;
       transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(0,240,255,0.10),
-        transparent
-      );
-      opacity: 0;
-      transition: opacity 0.35s ease;
     }
 
     .card:hover {
@@ -90,24 +74,13 @@
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
     }
 
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    /* LOGOS DE DEPARTAMENTO */
+    /* LOGOS DE DEPARTAMENTO UNIFICADOS */
     .dept-logo {
-      max-width: 120px;
-      height: auto;
+      width: 140px;
+      height: 80px;
+      object-fit: contain;
       margin-bottom: 1.2rem;
       filter: drop-shadow(0 0 15px rgba(0,240,255,0.35));
-    }
-
-    .card h2 {
-      color: var(--accent);
-      margin-bottom: 0.9rem;
-      letter-spacing: 1.5px;
-      font-size: 1.25rem;
-      text-transform: uppercase;
     }
 
     .card p {
@@ -125,7 +98,6 @@
       color: #000;
       background: linear-gradient(135deg, var(--accent), #00c6d4);
       font-weight: 700;
-      letter-spacing: 0.5px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -159,41 +131,25 @@
 
       <div class="card">
         <img src="seced-logo.png" alt="SECeD" class="dept-logo" />
-        <h2></h2>
-        <p>
-          Sistemas aéreos con envío de imágenes sin delay,
-          megafonía y visión nocturna.
-        </p>
+        <p>Sistemas aéreos con envío de imágenes sin delay, megafonía y visión nocturna.</p>
         <a href="seced.html">Acceder</a>
       </div>
 
       <div class="card">
         <img src="mopar-logo.png" alt="MOPaR" class="dept-logo" />
-        <h2></h2>
-        <p>
-          Monitoreo de participantes en tiempo real con sistemas
-          de seguimiento avanzados.
-        </p>
+        <p>Monitoreo de participantes en tiempo real con sistemas de seguimiento avanzados.</p>
         <a href="mopar.html">Acceder</a>
       </div>
 
       <div class="card">
         <img src="heidegger-logo.png" alt="Heidegger Race" class="dept-logo" />
-        <h2></h2>
-        <p>
-          Diseño y fabricación de equipos profesionales
-          para cronometraje deportivo.
-        </p>
+        <p>Diseño y fabricación de equipos profesionales para cronometraje deportivo.</p>
         <a href="heidegger.html">Acceder</a>
       </div>
 
       <div class="card">
         <img src="arkhon-logo.png" alt="Arkhon IoT" class="dept-logo" />
-        <h2></h2>
-        <p>
-          Desarrollo de productos IoT orientados
-          a automoción y control inteligente.
-        </p>
+        <p>Desarrollo de productos IoT orientados a automoción y control inteligente.</p>
         <a href="arkhon.html">Acceder</a>
       </div>
 
